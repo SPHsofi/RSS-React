@@ -7,11 +7,17 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "ci:format": "prettier --check '**/*.ts'",
+    "format:fix": "prettier --write .",
+    "preview": "vite preview",
+    "prepare": "cd .. && husky class-components/.husky"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "lint-staged": {
+    "./src/.": "npm run ci:format && npm run lint"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -23,6 +29,7 @@
     "eslint-plugin-react-compiler": "^0.0.0-experimental-0998c1e-20240625",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "husky": "^9.0.11",
     "prettier": "^3.3.2",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
