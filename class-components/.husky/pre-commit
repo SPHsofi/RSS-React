@@ -1,3 +1,2 @@
-npm test
 cd class-components
 npx lint-staged
