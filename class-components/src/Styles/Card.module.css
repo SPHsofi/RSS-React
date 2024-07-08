@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin: 2vh 0;
+}
+
+.cardWrap {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff;
+    flex-grow: 1;
+    padding: 10px;
+}
