@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiErrorAlt } from 'react-icons/bi';
+import style from '../Styles/ErrorBoundary.module.css';
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -26,9 +27,9 @@ class ErrorBoundary extends React.Component<Props, ErrorBoundaryState> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <BiErrorAlt />
-          <h1>Something went wrong.</h1>
+        <div className={style.errorWrapp}>
+          <BiErrorAlt className={style.img} />
+          <h1 className={style.text}>Something went wrong.</h1>
         </div>
       );
     }
