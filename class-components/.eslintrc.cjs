@@ -1,48 +1,38 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-  plugins: ['@typescript-eslint', 'prettier', "react-compiler"],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'react-refresh',
+    'react-compiler',
+    'prettier',
+  ],
   extends: [
-    'airbnb',
-    'airbnb-typescript',
     'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
     'plugin:prettier/recommended',
   ],
   rules: {
-    "react-compiler/react-compiler": "error",
-    'react/require-default-props': 'off',
+    '@typescript-eslint/no-explicit-any': 'error',
+    'react-compiler/react-compiler': 'error',
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-    'react/prop-types': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
+    'react/react-in-jsx-scope': "off",
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
     ],
   },
   env: {
-    es6: true,
+    es2020: true,
     browser: true,
-    node: true,
-    jest: true,
   },
   settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      },
+    react: {
+      version: 'detect',
     },
   },
 };
