@@ -29,7 +29,7 @@ class App extends React.Component<object, Response> {
 
   render() {
     return (
-      <div className='wrapper'>
+      <div className="wrapper">
         <ErrorButton />
         <Search handleSearch={this.handleSearch} />
         <Card animals={this.state.results} />
