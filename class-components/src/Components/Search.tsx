@@ -2,8 +2,6 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import style from '../Styles/Search.module.css';
 
-const FULL_API_URL: string = 'https://stapi.co/api/v1/rest/animal/search';
-
 interface SearchState {
   search: string;
 }
@@ -26,11 +24,8 @@ class Search extends React.Component<SearchProps, SearchState> {
       this.setState({ search: savedSearchTerm });
     }
   }
-
   handleSearch = async () => {
-    const response = await fetch(`${FULL_API_URL}?uid=${encodeURIComponent(this.state.search)}`);
-    const data = await response.json();
-    this.props.handleSearch(data);
+    this.props.handleSearch(this.state.search);
     localStorage.setItem('lastSearch', this.state.search);
   };
 
