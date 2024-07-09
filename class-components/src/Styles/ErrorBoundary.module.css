@@ -1,19 +1,19 @@
 .errorWrapp {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .img {
-    width: 20%;
-    height: 20%;
+  width: 20%;
+  height: 20%;
 }
 
 .text {
-    font-size: 5vw;
+  font-size: 5vw;
 }
 
 .errorBtn {
-    background-color: red;
-    margin-bottom: 20px;
+  background-color: red;
+  margin-bottom: 20px;
 }

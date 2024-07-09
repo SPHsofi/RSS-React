@@ -19,13 +19,13 @@ class App extends React.Component<object, Response> {
   }
 
   async componentDidMount(): Promise<void> {
-    const newState: Animal[] = await animal();
-    this.setState({ results: newState });
+    const newState: Animal[] | undefined = await animal();
+    if (newState) this.setState({ results: newState });
   }
 
   handleSearch = async (query: string): Promise<void> => {
-    const response: Resp = await findApi(query);
-    this.setState({ results: [response.animal] });
+    const response: Resp | undefined = await findApi(query);
+    if (response) this.setState({ results: [response.animal] });
   };
 
   render() {
