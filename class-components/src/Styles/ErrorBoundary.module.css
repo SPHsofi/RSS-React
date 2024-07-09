@@ -12,3 +12,8 @@
 .text {
     font-size: 5vw;
 }
+
+.errorBtn {
+    background-color: red;
+    margin-bottom: 20px;
+}
