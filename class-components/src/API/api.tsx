@@ -1,4 +1,4 @@
-const API_URL: string = 'https://stapi.co/api/v1/rest/animal/search';
+const API_URL: string = 'https://stapi.co/api/v1/rest/animal/search?pageNumber=2&pageSize=10';
 
 export interface Animal {
   uid: string;
