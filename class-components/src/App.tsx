@@ -3,6 +3,7 @@ import './App.css';
 import animal, { Animal } from './API/api.tsx';
 import Search from './Components/Search.tsx';
 import Card from './Components/Card.tsx';
+import ErrorButton from './Components/ErrorButton.tsx';
 
 interface Response {
   results: Animal[];
@@ -28,7 +29,8 @@ class App extends React.Component<object, Response> {
 
   render() {
     return (
-      <div>
+      <div className='wrapper'>
+        <ErrorButton />
         <Search handleSearch={this.handleSearch} />
         <Card animals={this.state.results} />
       </div>
