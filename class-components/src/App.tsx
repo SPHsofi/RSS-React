@@ -4,9 +4,10 @@ import animal, { Animal } from './API/api.tsx';
 import Search from './Components/Search.tsx';
 import Card from './Components/Card.tsx';
 import ErrorButton from './Components/ErrorButton.tsx';
+import findApi, { Resp } from './API/FindApi.tsx';
 
 interface Response {
-  results: Animal[];
+  results: Animal[] | string;
 }
 
 class App extends React.Component<object, Response> {
@@ -20,11 +21,11 @@ class App extends React.Component<object, Response> {
   async componentDidMount(): Promise<void> {
     const newState: Animal[] = await animal();
     this.setState({ results: newState });
-    console.log(newState);
   }
 
-  handleSearch = (query: string): void => {
-    console.log(query);
+  handleSearch = async (query: string): Promise<void> => {
+    const response: Resp = await findApi(query);
+    this.setState({ results: [response.animal] });
   };
 
   render() {
