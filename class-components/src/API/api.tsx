@@ -30,7 +30,7 @@ interface ServerResponse {
   animals: Animal[];
 }
 
-const animal = async (): Promise<Animal[]> => {
+const animal = async (): Promise<Animal[] | undefined> => {
   try {
     const response = await fetch(`${API_URL}`);
 

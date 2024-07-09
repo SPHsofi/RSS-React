@@ -29,7 +29,7 @@ class Card extends React.Component<CardProps, CardState> {
   };
 
   render() {
-    const { animals }: string = this.props;
+    const { animals }: CardProps = this.props;
 
     if (Array.isArray(animals)) {
       return <div className={style.wrapper}>{animals.map(this.renderAnimal)}</div>;

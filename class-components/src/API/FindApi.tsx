@@ -6,7 +6,7 @@ export interface Resp {
 
 const API_URL: string = 'https://stapi.co/api/v1/rest/animal';
 
-const findApi = async (uid: string): Promise<Resp> => {
+const findApi = async (uid: string): Promise<Resp | undefined> => {
   try {
     const response = await fetch(`${API_URL}?uid=${uid}`);
 
